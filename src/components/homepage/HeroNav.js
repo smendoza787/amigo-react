@@ -6,27 +6,29 @@ import Img from "gatsby-image"
 const HeroNavWrapper = styled.div`
   position: relative;
   width: 100%;
-  max-height: 60vh;
+  max-height: 70vh;
+  z-index: 2;
 
   img {
-    max-height: 60vh;
+    max-height: 70vh;
   }
 `
 
 const RedBar = styled.div`
-  height: 5rem;
+  height: 100px;
   background-color: #fe0c07;
   position: absolute;
-  bottom: -2.5rem;
-  left: calc(50% - 600px);
-  width: 1200px;
+  bottom: -50px;
+  left: calc(50% - 550px);
+  width: 100%;
+  max-width: 1100px;
   display: flex;
   align-items: center;
   justify-content: space-around;
 `
 
 const RebBarLink = styled(Link)`
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: white;
   font-family: "Abel", sans-serif;
   text-decoration: none;

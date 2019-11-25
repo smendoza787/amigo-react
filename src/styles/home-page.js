@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
-
 export const OldAmigoCSS = createGlobalStyle`
+
 .Header {
   background-color: white !important;
   padding-bottom: 1.5rem;
@@ -33,7 +33,7 @@ export const OldAmigoCSS = createGlobalStyle`
   display: flex;
   justify-content: center;
   background-size: cover;
-  background-position: bottom;    
+  background-position: bottom;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -78,24 +78,21 @@ export const OldAmigoCSS = createGlobalStyle`
 }
 
 .Amigo--Secondary-Nav div:before {
-  content: "";
+  content: '';
   position: absolute;
-  width: 100%;
+  width: 0%;
   height: 3px;
   bottom: 0;
   left: 0;
   background-color: #fff;
   visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
   -webkit-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
 }
 
 .Amigo--Secondary-Nav div:hover:before {
   visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+  width: 100%;
 }
 
 .Amigo--Welcome-TextSlider {
@@ -255,24 +252,25 @@ a.Header-nav-item {
 }
 
 a.Header-nav-item:before {
-  content: "";
+  content: '';
   position: absolute;
-  width: 100%;
+  width: 0%;
   height: 2px;
   bottom: 0;
   left: 0;
   background-color: #000;
   visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
   -webkit-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
 }
 
 a.Header-nav-item:hover:before {
   visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+  width: 100%;
+}
+
+.Header-nav-item--folder {
+  margin-right: 3rem;
 }
 
 * {
@@ -287,7 +285,9 @@ a.Header-nav-item:hover:before {
   color: black !important;
 }
 
-.tweak-header-primary-nav-hover-style-active .Header-nav .Header-nav-folder-item:hover {
+.tweak-header-primary-nav-hover-style-active
+  .Header-nav
+  .Header-nav-folder-item:hover {
   color: #fe0c07 !important;
 }
 
@@ -367,7 +367,7 @@ a.Header-nav-item:hover:before {
   margin-bottom: 0;
 }
 
-@media only screen (min-width: 1000px) {
+@media only screen and (min-width: 1000px) {
   .Amigo--GalleryPage-ImageGallery-Image-Caption h3 {
     font-size: 2.5rem;
   }
@@ -448,7 +448,9 @@ a.Header-nav-item:hover:before {
   padding: 1rem 0;
 }
 
-.newsletter-block .newsletter-form-wrapper--layoutStack .newsletter-form-field-wrapper {
+.newsletter-block
+  .newsletter-form-wrapper--layoutStack
+  .newsletter-form-field-wrapper {
   max-width: none !important;
 }
 
@@ -460,10 +462,22 @@ a.Header-nav-item:hover:before {
 
 #Welcome-TextSlider-Content {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   position: relative;
   width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  #Welcome-TextSlider-Content {
+    flex-direction: column;
+  }
+
+  #gallery-arrow-next {
+    margin: 0 auto;
+    margin-top: 5rem;
+  }
 }
 
 .gallery-arrow {
@@ -488,14 +502,14 @@ a.Header-nav-item:hover:before {
 
 .TextSlider-Slide {
   text-align: center;
-    padding: 0 2rem;
-    width: 100%;
-    max-width: 60rem;
-    height: 20rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  padding: 0 2rem;
+  width: 100%;
+  max-width: 60rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #gallery-arrow-prev {
@@ -505,4 +519,208 @@ a.Header-nav-item:hover:before {
 #gallery-arrow-next {
   margin-left: auto;
 }
+
+.Amigo--ImageGallery-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 0;
+  background-color: #fff;
+  padding: 5rem 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+svg#cactus-svg {
+  z-index: 2;
+  position: absolute;
+  left: -350px;
+  bottom: -1rem;
+  height: 101%;
+  width: auto;
+
+  path {
+    fill: #F9F9E8;
+  }
+}
+
+.Amigo--ImageGallery-Header {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 4rem;
+  font-size: 3.5rem;
+  font-weight: normal;
+  color: red;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1000px) {
+  .Amigo--ImageGallery-Header {
+    flex-direction: row;
+    width: 60rem;
+    padding-bottom: 5rem;
+  }
+
+  .Amigo--ImageGallery-Header-Line {
+    border-top: 2px solid black;
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .Amigo--ImageGallery-Header {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .ImageGallery-Header-Node {
+    width: 70% !important;
+  }
+
+  .ImageGallery-Header-Node p {
+    text-align: center;
+  }
+}
+
+.Amigo--ImageGallery-Header h2 {
+  color: red;
+}
+
+.ImageGallery-Header-Node {
+  width: 50%;
+}
+
+.Amigo--ImageGallery-Header-Line {
+  border-top: 2px solid black;
+  width: 60%;
+}
+
+.Amigo--ImageGallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100rem;
+  z-index: 3;
+}
+
+.Amigo--ImageGallery-Image {
+  max-width: 28rem !important;
+}
+
+.Amigo--ImageGallery-Image-Caption {
+  max-width: 25rem;
+}
+
+@media only screen and (min-width: 1000px) {
+  .Amigo--ImageGallery-Image-Caption {
+    max-width: 28rem;
+  }
+
+  .ImageGallery-Header-Node:first-of-type {
+    margin-right: 1.5rem;
+  }
+
+  .ImageGallery-Header-Node:last-of-type {
+    margin-left: 1.5rem;
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .Amigo--ImageGallery-Image {
+    width: 100%;
+  }
+
+  .Amigo--ImageGallery {
+    width: 100%;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .Amigo--ImageGallery-ImageWrapper {
+    width: 100%;
+  }
+}
+
+.Amigo--ImageGallery-ImageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.Amigo--ImageGallery-Image-Caption {
+  font-size: 1.25rem;
+  margin-left: auto;
+  margin-right: 2rem;
+  bottom: -16rem;
+}
+
+.Amigo--ImageGallery > div:nth-child(3) > div > div {
+  bottom: -11rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .Amigo--ImageGallery-Image-Caption {
+    position: absolute;
+  }
+}
+
+.Amigo--ImageGallery-Image-Caption h3 {
+  color: red;
+  margin-top: 1rem !important;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 1000px) {
+  .Amigo--ImageGallery-Image-Caption h3 {
+    font-size: 2.5rem;
+  }
+}
+
+.Amigo--ImageGallery-Image-Caption p {
+  color: black;
+}
+
+.Amigo--ImageGallery-Row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; 
+  margin-bottom: 3rem;
+  position: relative;
+  text-align: justify;
+}
+
+@media only screen and (min-width: 1000px) {
+  .Amigo--ImageGallery-Row {
+    width: 60rem;
+  }
+
+  .Index-page-content {
+    padding-bottom: 275px;
+  }
+}
+
+.Amigo--ImageGallery-Row:nth-child(even) {
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 1000px) {
+  .ImageGallery-Header-Node {
+    width: 70% !important;
+    padding: 5%;
+  }
+
+  .Amigo--ImageGallery-Header {
+    font-size: 2.5rem;
+    font-weight: 400 !important;
+  }
+} 
 `

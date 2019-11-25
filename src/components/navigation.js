@@ -13,7 +13,7 @@ const NavigationInnerWrapper = styled.div`
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
 `
 
 const LogoWrapper = styled.div`
@@ -36,6 +36,7 @@ const NavLink = styled.a`
   margin-right: 2.2rem;
   text-decoration: none;
   color: black;
+  letter-spacing: 1.5px;
 
   &:first-of-type {
     color: red;
