@@ -525,9 +525,10 @@ a.Header-nav-item:hover:before {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 1rem 0;
+  margin-top: 0;
   background-color: #fff;
-  padding: 5rem 0;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -537,7 +538,7 @@ svg#cactus-svg {
   z-index: 2;
   position: absolute;
   left: -350px;
-  bottom: -1rem;
+  bottom: 0rem;
   height: 101%;
   width: auto;
 
