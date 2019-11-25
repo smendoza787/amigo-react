@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 const NavigationWrapper = styled.nav`
   display: flex;
@@ -60,9 +60,9 @@ const Navigation = () => {
     <NavigationWrapper>
       <NavigationInnerWrapper>
         <LogoWrapper>
-          <div>
+          <Link>
             <Img fluid={placeholderImage.childImageSharp.fluid} />
-          </div>
+          </Link>
         </LogoWrapper>
         <NavLinks>
           <NavLink href="">BOOK A ROOM</NavLink>
