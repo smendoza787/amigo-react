@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 const BookingPage = () => {
 
   useEffect(() => {
-    if (window.CHECKFRONT) {
+    if (typeof window !== `undefined` && window.CHECKFRONT) {
       new window.CHECKFRONT.Widget({
         host: "stayamigo.checkfront.com",
         target: "CHECKFRONT_WIDGET_01",
@@ -13,7 +13,7 @@ const BookingPage = () => {
         provider: "droplet",
       }).render()
     }
-  }, [window && window.CHECKFRONT])
+  }, [typeof window !== `undefined` && window.CHECKFRONT])
 
   return (
     <Layout>
