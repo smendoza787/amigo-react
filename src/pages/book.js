@@ -13,7 +13,7 @@ const BookingPage = () => {
         provider: "droplet",
       }).render()
     }
-  }, [window.CHECKFRONT])
+  }, [window && window.CHECKFRONT])
 
   return (
     <Layout>
