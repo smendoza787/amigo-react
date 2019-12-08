@@ -2,10 +2,12 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { OldAmigoCSS } from "../styles/home-page.js"
+import { OldAmigoCSS } from "../styles/home-page"
 import HeroNav from "../components/homepage/HeroNav"
 import TextSlider from "../components/homepage/TextSlider"
 import ActivityGallery from "../components/homepage/ActivityGallery"
+import NewsletterForm from "../components/homepage/NewsletterForm"
+import ContentBlock from "../components/homepage/ContentBlock"
 
 const IndexPage = () => (
   <Layout>
@@ -17,6 +19,8 @@ const IndexPage = () => (
     </a>
     <TextSlider />
     <ActivityGallery />
+    <ContentBlock />
+    <NewsletterForm />
   </Layout>
 )
 

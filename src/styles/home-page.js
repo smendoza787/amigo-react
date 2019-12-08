@@ -723,5 +723,5 @@ svg#cactus-svg {
     font-size: 2.5rem;
     font-weight: 400 !important;
   }
-} 
+}
 `

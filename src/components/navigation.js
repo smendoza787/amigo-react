@@ -30,7 +30,7 @@ const NavLinks = styled.div`
   justify-content: flex-end;
 `
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   font-family: "Oswald", sans-serif;
   font-size: 1.5rem;
   margin-right: 2.2rem;
@@ -65,10 +65,10 @@ const Navigation = () => {
           </Link>
         </LogoWrapper>
         <NavLinks>
-          <NavLink href="">BOOK A ROOM</NavLink>
-          <NavLink href="">EXPLORE</NavLink>
-          <NavLink href="">JOURNAL</NavLink>
-          <NavLink href="">MORE</NavLink>
+          <NavLink to="/book">BOOK A ROOM</NavLink>
+          <NavLink to="/explore">EXPLORE</NavLink>
+          <NavLink to="/journal">JOURNAL</NavLink>
+          <NavLink to="/gallery">MORE</NavLink>
         </NavLinks>
       </NavigationInnerWrapper>
     </NavigationWrapper>
@@ -76,6 +76,8 @@ const Navigation = () => {
 }
 
 export default Navigation
+
+// MORE Menu >>>>>
 
 /* <div>
       <a href=""> GALLERY</a>
