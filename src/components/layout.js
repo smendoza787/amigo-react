@@ -7,33 +7,21 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 
 import "./layout.css"
 import Navigation from "./navigation"
 import Footer from "./footer"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const ContentWrapper = styled.div``
 
-  return (
-    <>
-      <Navigation />
-      <div>
-        <main>{children}</main>
-      </div>
-      <Footer />
-    </>
-  )
-}
+const Layout = ({ children }) => (
+  <>
+    <Navigation />
+    <ContentWrapper>{children}</ContentWrapper>
+    <Footer />
+  </>
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

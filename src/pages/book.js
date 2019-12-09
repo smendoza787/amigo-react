@@ -1,8 +1,13 @@
 import React, { useEffect } from "react"
 import Layout from "../components/layout"
+import styled from "styled-components"
+
+const CheckfrontWidgetWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
 
 const BookingPage = () => {
-
   useEffect(() => {
     if (typeof window !== `undefined` && window.CHECKFRONT) {
       new window.CHECKFRONT.Widget({
@@ -17,9 +22,9 @@ const BookingPage = () => {
 
   return (
     <Layout>
-      <div id="CHECKFRONT_WIDGET_01">
+      <CheckfrontWidgetWrapper id="CHECKFRONT_WIDGET_01">
         <p id="CHECKFRONT_LOADER">Searching Availability...</p>
-      </div>
+      </CheckfrontWidgetWrapper>
     </Layout>
   )
 }
